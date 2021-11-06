@@ -1,6 +1,6 @@
 ## About
 
-  I am a college freshman studying Computer Engineering. Here you can find a collection of some of my most finished projects, as well as a few projects I have done for other programs. My goal is to share what I have done to help both other programmers and anyone who finds these projects useful.
+  I am a college sphomore studying Computer Engineering. Here you can find a collection of some of my most finished projects, as well as a few projects I have done for other programs. My goal is to share what I have done to help both other programmers and anyone who finds these projects useful.
 
 <!--
 TODO: remove default text and fill in some more info (and examples).
