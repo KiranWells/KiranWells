@@ -1,0 +1,269 @@
+:root {
+  --bg: #1e1e2e;
+  --bg-x: #11111b;
+  --fg: #cdd6f4;
+  --fg-alt: #a6adc8;
+  --acc: #89dceb;
+}
+
+/* @media (prefers-color-scheme: light) { */
+/*   :root { */
+/*     --bg: #eff1f5; */
+/*     --fg: #11111b; */
+/*   } */
+/* } */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.3rem;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+header {
+  background: var(--bg-x);
+  min-height: 60svh;
+  width: 100svw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-size: 5rem;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  width: min-content;
+  position: relative;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  bottom: -0.125rem;
+  left: -5%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  background: var(--fg-alt);
+}
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: calc(-5% + 1rem);
+  width: 110%;
+  height: 0.25rem;
+  border-radius: 0.5rem;
+  background: var(--fg-alt);
+}
+
+header p {
+  font-weight: normal;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.elegant {
+  color: var(--acc);
+  font-family: "Kaushan Script";
+  font-size: larger;
+}
+
+main {
+  width: 100svw;
+  padding: 1rem;
+}
+
+.about {
+  min-height: 40svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    width: max-content;
+  }
+
+  main {
+    width: 80svw;
+  padding: 1rem 0;
+  }
+
+  .about {
+    flex-direction: row;
+  }
+}
+
+.about>img {
+  aspect-ratio: 1;
+  min-width: max(200px, 20svw);
+}
+
+.experience {
+  margin: 0 0 5rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+}
+
+.period {
+  position: relative;
+  padding-left: 1rem;
+  margin: 1rem 1.5rem;
+}
+
+.period::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  background: var(--fg-alt);
+}
+
+.period::after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  left: 0.125rem;
+  width: 0.25rem;
+  height: calc(100% - 1rem);
+  border-radius: 0.5rem;
+  background: var(--fg-alt);
+}
+
+.period .dates {
+  height: 1.5rem;
+  vertical-align: center;
+  font-size: smaller;
+  color: var(--fg-alt);
+}
+
+.period ul {
+  margin: 0.5rem;
+  padding-left: 0.5rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.period ul>li,
+.certifications ul>li {
+  position: relative;
+}
+
+.period ul>li::before,
+.certifications ul>li::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.25rem);
+  left: -2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  background: var(--fg-alt);
+}
+
+.certifications {
+  margin-bottom: 4rem;
+}
+
+.certifications ul>li {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.certifications ul>li::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.125rem);
+  left: -1rem;
+  width: 1.5rem;
+  height: 0.25rem;
+  border-radius: 0.5rem;
+  background: var(--fg-alt);
+}
+
+.project {
+  background: var(--bg-x);
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project>div:first-child {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  bottom: -1rem;
+  left: -1rem;
+  border-radius: 1rem;
+}
+
+.project h3 {
+  font-size: 2rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+aside {
+  color: var(--fg-alt);
+  font-size: smaller;
+  margin-bottom: 1.5rem;
+}
+
+.project p {
+  margin: 1.5rem 0;
+}
+
+.project ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project ul>li {
+  background: var(--bg);
+  color: var(--fg-alt);
+  padding: 0.5rem 1rem;
+  border-radius: 1em;
+  min-width: 1em;
+  text-align: center;
+  font-size: 1rem;
+}
+
+a {
+  color: var(--acc);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

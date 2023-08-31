@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Griffith Thomas - Software Engineer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Handlee&family=Abril+Fatface&family=Kaushan+Script&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+    <header>
+      <h1>
+        Griffith Thomas
+      </h1>
+      <p>
+        Building reliable, performant, <span class="elegant">elegant</span> software.
+      </p>
+    </header>
+    <main>
+      <section class="about">
+        <img src="images/logo.svg" alt="My personal logo">
+        <article>
+          <p>
+            I am a full stack developer with three years of experience in application development and cloud computing. I
+            am passionate about graphics, high-performace computing, and Rust, and I am always willing to learn something new.
+          </p>
+          <p>
+            Outside of programming, I enjoy playing board games (with some occasional D&D) and experimenting with virtual reality
+            and whatever else catches my interest.
+          </p>
+        </article>
+        <!-- <article> -->
+        <!--   <ul class="multi-col"> -->
+        <!--     <li>React, TypeScript</li> -->
+        <!--     <li>Rust, C, C++</li> -->
+        <!--     <li>Python</li> -->
+        <!--     <li>git GitHub</li> -->
+        <!--     <li>Ubuntu, Arch Linux, Amazon Linux</li> -->
+        <!--     <li>AWS, Kubernetes</li> -->
+        <!--     <li>Slack, Zoom</li> -->
+        <!--   </ul> -->
+        <!-- </article> -->
+      </section>
+      <section class="experience">
+        <!-- <h2>Experience</h2> -->
+        <h2>Spyderbat</h2>
+        <aside>Intern/Consultant</aside>
+        <div class="period">
+        <div class="dates">May-Aug 2023</div>
+        <ul>
+          <li>Developed graph visualizations and dynamic tables in React JS</li>
+        </ul>
+        </div>
+        <div class="period">
+        <div class="dates">May-Dec 2022</div>
+        <ul>
+          <li>Developed a Python command-line application as an additional front-end for the Spyderbat API</li>
+          <li>Implemented an internal administration dashboard using React JS</li>
+          <li>Configured the backend API to be OpenAPI compliant</li>
+          <li>Generated DockerFiles for publishing of command-line applications</li>
+        </ul>
+        </div>
+        <div class="period">
+        <div class="dates">May-Aug 2021</div>
+        <ul>
+          <li>Produced a prototype back-end proxy server using Node JS and TypeScript</li>
+            <li>Integrated support for the proxy server API into the existing front-end web application</li>
+        </ul>
+        </div>
+      </section>
+      <section class="certifications">
+        <h2>Certifications</h2>
+          <ul>
+            <li><a href="https://www.credly.com/badges/c82dffe3-3358-4fab-a775-2181508b8bef/embedded">GIAC Foundational Cybersecurity Technologies (GFACT)</a></li>
+          </ul>
+      </section>
+      <section class="projects">
+        <!-- <h2>Featured Projects</h2> -->
+        <article class="project">
+          <div style="background-image: url('images/spydertop.webp');"></div>
+          <div>
+            <h3><a href="https://github.com/spyderbat/spydertop">SPYDERTOP</a></h3>
+            <aside>Python HTOP-like CLI</aside>
+            <p>Spydertop is a command-line application written in Python that provides
+              HTOP-like functionality for times in the past. It uses 
+              <a href="https://spyderbat.com">Spyderbat</a>'s public
+              APIs, which I configured to use OpenAPI as a part of this project.</p>
+          <ul class="multi-col">
+            <li>Python</li>
+            <li>OpenAPI</li>
+          </ul>
+          </div>
+        </article>
+        <article class="project">
+        <div style="background-image: url('images/corgi.webp');"></div>
+        <div>
+          <h3><a href="https://github.com/KiranWells/corgi">CORGI</a></h3>
+            <aside>GPU Accelerated Fractal Engine</aside>
+          <p>Corgi uses GPU compute shaders to calculate fractal images at extremely high speeds. It uses a perturbation
+            formula to calculate the images with very high precision, allowing for extremely high levels of
+            magnification. This image was rendered at a zoom level of 2<sup>94</sup>, which is a
+            19,807,040,&ZeroWidthSpace;628,566,&ZeroWidthSpace;084,398,&ZeroWidthSpace;385,987,584 times
+            magnification. The Vulkan-like library <a href="https://github.com/hasenbanck/wgpu">wpgu</a> for GPU compute
+            and renders the UI with <a href="https://github.com/emilk/egui">egui</a>.</p>
+          <ul class="multi-col">
+            <li>Rust</li>
+            <li>Vulkan</li>
+            <li>GPU Compute</li>
+          </ul>
+        </div>
+      </article>
+      <article class="project">
+        <div style="background-image: url('images/c_vs_rust.webp');"></div>
+        <div>
+          <h3 id="c_vs_rust"><a href="https://github.com/KiranWells/c_vs_rust">C VS. RUST</a></h3>
+            <aside>A comparison of C and Rust in CPU Compute</aside>
+          <p>A parallelized and vectorized implementation of the Mandelbrot set using both Rust and C for performance
+            and code structure comparison. Both implementations are designed to have the highest possible performance
+            while maintaining identical output.</p>
+          <ul class="multi-col">
+            <li>Rust</li>
+            <li>C</li>
+            <li>SIMD</li>
+            <li>Multithreading</li>
+          </ul>
+        </div>
+      </article>
+      <article class="project">
+        <div style="background-image: url('images/mandel.webp');"></div>
+        <div>
+          <h3><a href="https://github.com/KiranWells/mandel-app">FRACTAL EXPLORER</a></h3>
+          <p>This is the predecessor to Corgi, and is a desktop application for real-time fractal exploration written in
+            Rust. It uses the same high-performance algorithm as used in the comparison of C and Rust, and uses
+            progressive rendering for maximum responsiveness</p>
+          <ul class="multi-col">
+            <li>Rust</li>
+            <li>Native Apps</li>
+          </ul>
+        </div>
+      </article>
+      <article class="project">
+        <div style="background-image: url('images/ray-graph.webp');"></div>
+        <div>
+          <h3><a href="https://kiranwells.github.com/ray-graph">RAY GRAPH</a></h3>
+            <aside>Path-traced 3D Graphing</aside>
+          <p>Ray-Graph is a 3D graph visualization web application. It uses dynamically-generated OpenGL shaders
+            transpiled from user-defined LaTeX functions to render uncommonly structured functions that many other 3D
+            graphing applications struggle with.</p>
+          <ul class="multi-col">
+            <li>GLSL</li>
+            <li>JavaScript</li>
+            <li>LateX</li>
+          </ul>
+        </div>
+      </article>
+    </main>
+</body>
+
+</html>
