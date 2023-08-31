@@ -29,6 +29,78 @@ body {
   margin: 0;
 }
 
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  padding-bottom: 4rem;
+  width: 1.75rem;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1;
+}
+
+nav:hover {
+  width: 7rem;
+}
+
+nav a {
+  color: var(--fg-alt);
+  font-size: 1rem;
+  padding-top: 2.5rem;
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.1s ease;
+  position: relative;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: var(--fg);
+}
+
+nav svg {
+  fill: var(--fg-alt);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  transition: fill 0.1s ease;
+}
+
+nav>a:hover>svg {
+  fill: var(--fg);
+}
+
+nav>a::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: 0.675rem;
+  width: 0.25rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--fg-alt);
+}
+
+nav>a:hover::before {
+  width: 0.25rem;
+}
+
+nav>a:last-child::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0.675rem;
+  width: 0.25rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background: var(--fg-alt);
+}
+
 header {
   background: var(--bg-x);
   min-height: 60svh;
@@ -78,7 +150,7 @@ header p {
 
 .elegant {
   color: var(--acc);
-  font-family: "Kaushan Script";
+  font-family: "Kaushan Script", cursive;
   font-size: larger;
 }
 
@@ -208,21 +280,33 @@ h2 {
 }
 
 .project {
-  background: var(--bg-x);
   border-radius: 2rem;
-  padding: 2rem;
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
+  background-position-y: -10rem;
+  background-position-x: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.project>div:first-child {
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  bottom: -1rem;
-  left: -1rem;
-  border-radius: 1rem;
+.project>div {
+  border-radius: 2rem;
+  padding: 2rem;
+  background: var(--bg-x);
+  margin-top: 7rem;
+}
+
+@media screen and (min-width: 700px) {
+  .project {
+    background-position-x: -60%;
+    background-position-y: center;
+  }
+
+  .project>div {
+    margin-top: 0;
+    width: 70%;
+  }
 }
 
 .project h3 {
@@ -260,10 +344,24 @@ aside {
 }
 
 a {
+  position: relative;
   color: var(--acc);
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -0.125em;
+  left: 0;
+  width: 0;
+  height: 0.125em;
+  border-radius: 0.125em;
+  background-color: var(--acc);
+  transition: width 0.2s ease;
+}
+
+a:hover::before {
+  width: 100%;
 }
