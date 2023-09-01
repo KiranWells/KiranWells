@@ -6,15 +6,28 @@
   --acc: #89dceb;
 }
 
-/* @media (prefers-color-scheme: light) { */
-/*   :root { */
-/*     --bg: #eff1f5; */
-/*     --fg: #11111b; */
-/*   } */
-/* } */
-
 * {
   box-sizing: border-box;
+  transform-style: preserve-3d;
+  /* for some reason, this is necessary to get the 
+   * overflow: hidden to work on parallax objects */
+  overflow: hidden;
+}
+
+.parallax-container {
+  perspective: 1px;
+  height: 100svh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+a,
+li,
+ul,
+h1,
+h2,
+h3 {
+  overflow: visible;
 }
 
 body {
@@ -22,10 +35,6 @@ body {
   font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--fg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin: 0;
 }
 
@@ -35,27 +44,62 @@ nav {
   left: 0;
   display: flex;
   flex-direction: column;
-  margin-left: 1rem;
-  padding-bottom: 4rem;
-  width: 1.75rem;
+  margin-left: 0.25rem;
+  padding: 0 0.25rem;
+  padding-bottom: 5rem;
+  width: 2rem;
   overflow: hidden;
   transition: width 0.5s ease;
   z-index: 1;
 }
 
-nav:hover {
-  width: 7rem;
+@media screen and (min-width: 700px) {
+  nav {
+    margin-left: 1rem;
+  }
+}
+
+nav::before {
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border: 1rem solid var(--bg-x);
+  border-bottom: 1rem solid transparent;
+  content: "";
+}
+
+nav:hover,
+nav:active,
+nav:focus-within {
+  width: 10rem;
 }
 
 nav a {
   color: var(--fg-alt);
   font-size: 1rem;
-  padding-top: 2.5rem;
+  font-weight: bold;
+  margin-top: 2.5rem;
+  height: 2rem;
   width: max-content;
   display: inline-flex;
   align-items: center;
   transition: color 0.1s ease;
   position: relative;
+  overflow: visible;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border: 1rem solid var(--bg-x);
+  border-right: 1rem solid transparent;
+  z-index: -1;
 }
 
 nav a:hover {
@@ -63,22 +107,22 @@ nav a:hover {
   color: var(--fg);
 }
 
+svg {
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
 nav svg {
-  fill: var(--fg-alt);
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 0.5rem;
   transition: fill 0.1s ease;
 }
 
-nav>a:hover>svg {
-  fill: var(--fg);
-}
-
 nav>a::before {
   content: "";
   position: absolute;
-  top: 0.5rem;
+  bottom: calc(100% + 0.5rem);
   left: 0.675rem;
   width: 0.25rem;
   height: 1.5rem;
@@ -90,11 +134,11 @@ nav>a:hover::before {
   width: 0.25rem;
 }
 
-nav>a:last-child::after {
+nav::after {
   content: "";
   position: absolute;
-  top: calc(100% + 0.25rem);
-  left: 0.675rem;
+  bottom: 1.5rem;
+  left: 0.875rem;
   width: 0.25rem;
   height: 3rem;
   border-radius: 0.5rem;
@@ -131,6 +175,7 @@ h1::before {
   border-radius: 0.5rem;
   background: var(--fg-alt);
 }
+
 h1::after {
   content: "";
   position: absolute;
@@ -145,7 +190,7 @@ h1::after {
 header p {
   font-weight: normal;
   font-size: 2rem;
-  margin-top: 0;
+  margin: 0 2.5rem 2rem 2.5rem;
 }
 
 .elegant {
@@ -156,16 +201,18 @@ header p {
 
 main {
   width: 100svw;
-  padding: 1rem;
+  padding: 2.5rem;
 }
 
 .about {
   min-height: 40svh;
+  max-width: max(50rem, 50vw);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  overflow: visible;
 }
 
 @media screen and (min-width: 800px) {
@@ -175,7 +222,8 @@ main {
 
   main {
     width: 80svw;
-  padding: 1rem 0;
+    padding: 1rem 0;
+    margin: auto;
   }
 
   .about {
@@ -188,6 +236,18 @@ main {
   min-width: max(200px, 20svw);
 }
 
+.wrap-group {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 2000px) {
+  .wrap-group {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
 .experience {
   margin: 0 0 5rem 0;
 }
@@ -196,6 +256,11 @@ h2 {
   font-size: 2rem;
   font-weight: normal;
   margin-bottom: 0.5rem;
+}
+
+.experience ul {
+  padding: 0;
+  list-style-type: none;
 }
 
 .period {
@@ -279,39 +344,80 @@ h2 {
   background: var(--fg-alt);
 }
 
+.projects>h2 {
+  margin-bottom: 1.5rem;
+}
+
+a.noline::before {
+  display: none;
+}
+
 .project {
-  border-radius: 2rem;
-  margin-bottom: 2rem;
+  border-radius: 1.5rem;
+  margin-bottom: 3rem;
   position: relative;
+  background-size: 0;
   overflow: hidden;
-  background-position-y: -10rem;
-  background-position-x: center;
+}
+
+.project::before {
+  content: "";
+  background-image: inherit;
+  position: absolute;
+  width: 100svw;
+  height: 100svh;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  transform: translateZ(-0.5px) scale(1.4);
+  transition: transform 0.3s ease;
+  transform-origin: bottom;
+}
+
+@media screen and (prefers-reduced-motion) {
+  .parallax-container {
+    perspective: none;
+  }
+
+  .project::before {
+    transform: none;
+    background-position-y: center;
+    height: 100%;
+  }
 }
 
 .project>div {
-  border-radius: 2rem;
-  padding: 2rem;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
   background: var(--bg-x);
-  margin-top: 7rem;
+  margin-top: 30%;
 }
 
 @media screen and (min-width: 700px) {
-  .project {
-    background-position-x: -60%;
-    background-position-y: center;
-  }
-
   .project>div {
     margin-top: 0;
-    width: 70%;
+    margin-left: 30%;
+  }
+
+  .period::before {
+    transform-origin: right;
   }
 }
 
 .project h3 {
   font-size: 2rem;
-  margin: 0.5rem 0 0.5rem 0;
+  margin: 0 0 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+a:hover .project::before {
+  transform: translateZ(-0.4px) scale(1.4);
+}
+
+a:hover .project h3 {
+  color: var(--acc);
 }
 
 aside {
@@ -322,6 +428,7 @@ aside {
 
 .project p {
   margin: 1.5rem 0;
+  color: var(--fg);
 }
 
 .project ul {
@@ -345,7 +452,7 @@ aside {
 
 a {
   position: relative;
-  color: var(--acc);
+  color: inherit;
   text-decoration: none;
 }
 
@@ -359,9 +466,13 @@ a::before {
   height: 0.125em;
   border-radius: 0.125em;
   background-color: var(--acc);
-  transition: width 0.2s ease;
+  transition: width 0.2s ease, color 0.2s ease;
 }
 
 a:hover::before {
   width: 100%;
+}
+
+a:hover {
+  color: var(--acc);
 }
