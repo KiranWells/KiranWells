@@ -147,7 +147,7 @@ nav::after {
 
 header {
   background: var(--bg-x);
-  min-height: 60svh;
+  min-height: 55svh;
   width: 100svw;
   display: flex;
   flex-direction: column;
@@ -205,7 +205,7 @@ main {
 }
 
 .about {
-  min-height: 40svh;
+  min-height: 45svh;
   max-width: max(50rem, 50vw);
   margin: 0 auto;
   display: flex;
@@ -213,9 +213,10 @@ main {
   align-items: center;
   justify-content: center;
   overflow: visible;
+  gap: 2rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   h1 {
     width: max-content;
   }
@@ -231,9 +232,11 @@ main {
   }
 }
 
-.about>img {
+.about img {
   aspect-ratio: 1;
-  min-width: max(200px, 20svw);
+  border-radius: 50%;
+  min-width: max(200px, 15svw);
+  max-width: 60svw;
 }
 
 .about .action {
