@@ -236,6 +236,10 @@ main {
   min-width: max(200px, 20svw);
 }
 
+.about .action {
+  text-align: center;
+}
+
 .wrap-group {
   display: flex;
   flex-direction: column;
