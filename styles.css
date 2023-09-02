@@ -206,7 +206,7 @@ main {
 
 .about {
   min-height: 45svh;
-  max-width: max(50rem, 50vw);
+  max-width: max(50rem, 60vw);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
