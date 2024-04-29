@@ -1,7 +1,9 @@
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KiranWells&layout=compact&theme=gruvbox&exclude_repo=web-app" alt="Top Langs" />
-</a>
+## About Me
 
-## About
+I am a software engineer with interests in high-performance computing and cybersecurity.
 
-  I am a college student studying Computer Engineering. Here you can find a collection of some of my most finished projects, as well as a few projects I have done for other programs. My goal is to share what I have done to help both other programmers and anyone who finds these projects useful.
+Currently, I am experimenting with Rust, GPU compute, and path tracing algorithms, but I like learning a little bit of everything. Some of my favorite personal projects are listed below.
+I also love teaching people about the things I am passionate about, so feel free to reach out if you want to know more about my work.
+
+| <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=KiranWells&show_icons=true&theme=catppuccin_mocha&hide_border=true" alt="Anurag's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KiranWells&layout=compact&theme=catppuccin_mocha&exclude_repo=web-app&hide_border=true" /></a> |
+| ------------- | ------------- |
